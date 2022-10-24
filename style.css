@@ -1,0 +1,166 @@
+html {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#drawingArea {
+    height: 800px;
+    display: flex;
+    justify-content: center;
+}
+
+#header {
+    height: 75px;
+    background-color: #142d4c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#footer {
+    /* height: 23px; */
+    background-color: #142d4c;
+    flex-grow: 1  ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#logo {
+    margin: 0;
+    font-size: 48px ;
+    color: #f8fdff;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#logo span {
+    color: #c24d2c;
+}
+
+#container{
+    width: 1600px;
+    height: 800px;
+    display: grid;
+    grid-template-columns: repeat(64, 1fr);
+    grid-template-rows: repeat(32, 1fr);
+}
+
+#leftTools, #rightTools {
+    padding-top: 7px;
+    background-color: #38598b;
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    
+    
+}
+
+#help {
+    background-color:#46689b;
+    width: 100px;
+    flex-grow: 1;
+}
+
+#canvas {
+    position: absolute;
+    top: 56px;
+    width: 1600px;
+    height: 800px;
+}
+
+
+.square {
+    background-color: #33b3ee;
+    display: grid;
+    grid-template-columns: auto 4%;
+    grid-template-rows: auto 4%;
+
+   }
+
+.box{
+    background-color: #33b3ee;
+}
+
+.square :nth-child(1) {
+    background-color: #ececec;
+}
+
+.gridLineV{
+    background-color: rgb(222, 222, 222);
+}
+.gridLineH{
+    background-color: rgb(217, 217, 217);
+}
+.point {
+   
+    background-color: black;
+
+}
+
+
+button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    border: 0px solid transparent;
+    background-color: rgba(216, 214, 229, 0.1);
+    border-radius: 0.5em;
+    transition: all 0.5s linear;
+   }
+   
+   button:hover {
+    box-shadow: 3.4px 2.5px 4.9px rgba(0, 0, 0, 0.025),
+     8.6px 6.3px 12.4px rgba(0, 0, 0, 0.035),
+     17.5px 12.8px 25.3px rgba(0, 0, 0, 0.045),
+     36.1px 26.3px 52.2px rgba(0, 0, 0, 0.055),
+     99px 72px 143px rgba(0, 0, 0, 0.08);
+   }
+   
+   .tooltip {
+    position: relative;
+    display: inline-block;
+    height: 46px;
+    width: 46px;
+   }
+   
+   .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 3.5em;
+    background-color: rgba(0, 0, 0, 0.253);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 0;
+    top: 100%;
+    left: 10%;
+   }
+   
+   /* .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent rgba(0, 0, 0, 0.253) transparent transparent;
+   } */
+   
+   .tooltip:hover .tooltiptext {
+    visibility: visible;
+   }

@@ -66,7 +66,7 @@ body {
     
 }
 
-#help {
+#settings {
     background-color:#46689b;
     width: 100px;
     flex-grow: 1;
@@ -80,7 +80,7 @@ body {
 }
 
 
-.square {
+.gridItem {
     background-color: #33b3ee;
     display: grid;
     grid-template-columns: auto 4%;
@@ -89,19 +89,15 @@ body {
    }
 
 .box{
-    background-color: #33b3ee;
-}
-
-.square :nth-child(1) {
     background-color: #ececec;
 }
 
-.gridLineV{
+
+.gridLineV , .gridLineH {
     background-color: rgb(222, 222, 222);
 }
-.gridLineH{
-    background-color: rgb(217, 217, 217);
-}
+
+
 .point {
    
     background-color: black;

@@ -42,7 +42,7 @@ for (let i = 1; i <= 15; i++) {
  
         let button = document.createElement('button');
         button.id = `leftBtn${i}` ;
-        button.classList.add('tooltip');
+        button.classList.add('leftTooltip');
         let buttonImg = document.createElement('img')
         buttonImg.classList.add('buttonImg');
         button.appendChild(buttonImg);
@@ -56,7 +56,7 @@ for (let i = 1; i <= 15; i++) {
 for (let i = 1; i <= 15; i++) {   
         let button = document.createElement('button');
         button.id = `rightBtn${i}` ;
-        button.classList.add('tooltip');
+        button.classList.add('rightTooltip');
         let buttonImg = document.createElement('img')
         buttonImg.classList.add('buttonImg');
         button.appendChild(buttonImg);
@@ -67,9 +67,12 @@ for (let i = 1; i <= 15; i++) {
         rightTools.appendChild(button); 
     }
 
+
+
 function changeBoxColor(e) {
     e.preventDefault();
-    this.style.backgroundColor = "red";
+    let pickedColor = document.getElementById("baseColor").value;
+    this.style.backgroundColor = pickedColor;
 }
 
 function startPainting(e){
@@ -92,7 +95,26 @@ document.getElementById('leftBtn1').addEventListener('click', ()=> {
     container.addEventListener('mouseup', stopPainting);
 })
 
-    
+
+document.querySelector('#leftBtn1 .buttonImg').src = "./images/brush.png";
+document.querySelector('#leftBtn1 .tooltiptext').textContent = "Brush";
+document.querySelector('#leftBtn2 .buttonImg').src = "./images/line.png";
+document.querySelector('#leftBtn2 .tooltiptext').textContent = "Line";
+document.querySelector('#leftBtn3 .buttonImg').src = "./images/rectangle.png";
+document.querySelector('#leftBtn3 .tooltiptext').textContent = "Rectangle";
+document.querySelector('#leftBtn4 .buttonImg').src = "./images/circle.png";
+document.querySelector('#leftBtn4 .tooltiptext').textContent = "Circle";
+document.querySelector('#leftBtn5 .buttonImg').src = "./images/ngon.png";
+document.querySelector('#leftBtn5 .tooltiptext').textContent = "Ngon";
+document.querySelector('#leftBtn6 .buttonImg').src = "./images/arc.png";
+document.querySelector('#leftBtn6 .tooltiptext').textContent = "Arc";
+
+document.querySelector('#rightBtn1 .buttonImg').src = "./images/wall.png";
+document.querySelector('#rightBtn1 .tooltiptext').textContent = "Wall";
+
+
+document.querySelector('#rightBtn2 .buttonImg').src = "./images/door.png";
+document.querySelector('#rightBtn2 .tooltiptext').textContent = "Door";
 
 
 

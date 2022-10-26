@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
     <title>OdinCAD</title>
@@ -11,17 +12,50 @@
 <body>
 
     <header id="header">
-        <h1 id="logo">Odin<span>CAD</span></h1>
+        <div id="logo">
+            <h1>Odin<span>CAD</span></h1><img src="./images/icon.png" height="56px"  alt="">
+        </div>
     </header>
     <div id="drawingArea">
         <!-- <canvas id="canvas"></canvas> -->
         <div id="settings">
-            <h4>Global-Settings</h4>
-            <h5>colors</h5>
-            <h5>Grid</h5>
-            <h5>lines</h5>
-            <input  type="color" id="colorPicker" value="#333333" />
+            <h3 class="settingsHeader">GLOBAL SETTINGS</h3>
+            <label class="sectionLabel" for="colorSettings">COLOR SETTINGS</label>
+            <div id="colorSettings" class="settingsSection">
+                <div class="settingItem">
+                    <label for="baseColor">BASE COLOR</label>
+                        <input  type="color" id="baseColor" class="colorInput" value="#333333"></input>
+                </div>
+                <div class="settingItem">
+                    <label for="random">RANDOM COLORS</label>
+                    <input type="checkbox" name="random" id="random">
+                </div>
+                <div class="settingItem">
+                    <label for="random">RANDOM SHADES</label>
+                    <input type="checkbox" name="random" id="random">
+                </div>
             
+            </div>
+               
+            <label class="sectionLabel" for="gridSettings">GRID SETTINGS</label>
+            <div id="gridSettings" class="settingsSection">
+                <div class="settingItem">
+                    <label for="gridColor">GRID SIZE</label>
+                    <div>
+                        <div id="gridSizeLetters"><span>S</span><span>M</span><span>L</span></div>
+                        <input type="range" min="1" max="3" id="gridSizeSlider">
+                    </div>
+                </div>
+                <div class="settingItem">
+                    <label for="gridColor">GRID COLOR</label>
+                    <input  type="color" id="gridColor" class="colorInput" value="#333333" />
+                </div> 
+                  
+                <div class="settingItem">
+                    <label for="random">GRID LINES</label>
+                    <input type="checkbox" id="gridLines">
+                </div>
+            </div>   
         </div>
 
         <div id="leftTools"></div>

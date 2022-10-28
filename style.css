@@ -59,8 +59,8 @@ body {
     height: 800px;
     display: grid;
     background-color: white;
-    grid-template-columns: repeat(64, 1fr);
-    grid-template-rows: repeat(32, 1fr);
+    /* grid-template-columns: repeat(64, 1fr);
+    grid-template-rows: repeat(32, 1fr); */
 }
 
 #leftTools, #rightTools {
@@ -123,8 +123,8 @@ body {
 .colorInput {
     padding: 0;
     margin: 0px;
-    width: 24px;
-    height: 18px;
+    width: 32px;
+    height: 16px;
 }
 
 input[type="color"] {
@@ -138,6 +138,10 @@ input[type="color"]::-webkit-color-swatch {
     border: none;
 }
 
+input[type="checkbox"] {
+    height: 16px;
+    width: 16px;
+}
 
 
 #gridSizeSlider {
@@ -149,8 +153,15 @@ input[type="color"]::-webkit-color-swatch {
     background: #ffffff;
     outline: none;
     -webkit-transition: .2s;
-    transition: opacity .2s;
+   
   }
+
+  #gridSizeSlider:hover {
+     cursor: pointer;
+    
+  }
+
+  
   
   #gridSizeSlider::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -176,15 +187,6 @@ input[type="color"]::-webkit-color-swatch {
   }
 
   
- 
-
-
-
-
-
-
-    
-
 
 
 #canvas {
@@ -198,8 +200,8 @@ input[type="color"]::-webkit-color-swatch {
 .gridItem {
     background-color: #33b3ee;
     display: grid;
-    grid-template-columns: auto 4%;
-    grid-template-rows: auto 4%;
+    grid-template-columns: auto 5%;
+    grid-template-rows: auto 5%;
 
    }
 
@@ -208,16 +210,15 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 
-.gridLineV , .gridLineH {
-    background-color: rgb(222, 222, 222);
-}
-
 
 .point {
-   
-    background-color: black;
-
+    background-color: rgb(14, 2, 2);
+    grid-column-start: 2;
+    grid-row-start: 2;
 }
+
+
+
 
 
 button {

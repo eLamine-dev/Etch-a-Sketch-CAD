@@ -1,37 +1,87 @@
 
 let container = document.getElementById('container');
 
-let canvas = document.getElementById('canvas');
-// canvas.style.pointerEvents = 'none';
 
-for (let i = 0; i < 2304; i++) {
+let gridSizeInput = document.getElementById('gridSizeSlider') ;
 
-    let gridItem = document.createElement('div');
-    gridItem.classList.add('gridItem');
+// let gridColumns = 64 ;
+// let gridRows = 32 ;
+// let gridItemsCount = 2042 ;
 
-    let box = document.createElement('div');
-    box.classList.add('box');
-    gridItem.appendChild(box);
-
-    
-    let gridLineV = document.createElement('div');
-    gridLineV.classList.add('gridLineV');
-    gridItem.appendChild(gridLineV);
+function updateGridSizes(){
    
-
-    let gridLineH = document.createElement('div');
-    gridLineH.classList.add('gridLineH');
-    gridItem.appendChild(gridLineH);
-    
-
-    let point = document.createElement('div');
-    point.classList.add('point');
-    gridItem.appendChild(point);
-
-    container.appendChild(gridItem);
-
-
+    if (gridSizeInput.value === "1") {
+        gridColumns = 128;
+        gridRows = 64;
+        gridItemsCount = 8192;
+    } else if (gridSizeInput.value === "2") {
+        gridColumns = 64;
+        gridRows = 32;
+        gridItemsCount = 2042;
+    } else if (gridSizeInput.value === "3") {
+        gridColumns = 32;
+        gridRows = 16;
+        gridItemsCount = 1024;
     }
+    
+}
+
+
+
+window.onload = function() {
+    updateGridSizes();
+    setGrid();
+}
+
+
+
+gridSizeInput.oninput = function() { 
+    updateGridSizes();
+    setGrid();
+  }
+
+
+
+function setGrid() {
+
+    
+    container.style.gridTemplateColumns = `repeat(${gridColumns}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${gridRows}, 1fr)` ;
+
+    for (let i = 0; i < gridItemsCount; i++) {
+
+        let gridItem = document.createElement('div');
+        gridItem.classList.add('gridItem');
+    
+        let box = document.createElement('div');
+        box.classList.add('box');
+        gridItem.appendChild(box);
+    
+        
+        // let gridLineV = document.createElement('div');
+        // gridLineV.classList.add('gridLineV');
+        // gridItem.appendChild(gridLineV);
+       
+    
+        // let gridLineH = document.createElement('div');
+        // gridLineH.classList.add('gridLineH');
+        // gridItem.appendChild(gridLineH);
+        
+    
+        let point = document.createElement('div');
+        point.classList.add('point');
+        gridItem.appendChild(point);
+    
+        container.appendChild(gridItem);
+    
+    
+        }
+
+}
+
+// setGrid(gridColumns,gridRows,gridItemsCount);
+
+
 
     let leftTools = document.getElementById('leftTools');
     let rightTools = document.getElementById('rightTools');
@@ -109,12 +159,11 @@ document.querySelector('#leftBtn5 .tooltiptext').textContent = "Ngon";
 document.querySelector('#leftBtn6 .buttonImg').src = "./images/arc.png";
 document.querySelector('#leftBtn6 .tooltiptext').textContent = "Arc";
 
-document.querySelector('#rightBtn1 .buttonImg').src = "./images/wall.png";
-document.querySelector('#rightBtn1 .tooltiptext').textContent = "Wall";
 
 
-document.querySelector('#rightBtn2 .buttonImg').src = "./images/door.png";
-document.querySelector('#rightBtn2 .tooltiptext').textContent = "Door";
+document.querySelector('#rightBtn1 .buttonImg').src = "./images/erase.png";
+document.querySelector('#rightBtn1 .tooltiptext').textContent = "Erase";
+
 
 
 

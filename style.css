@@ -58,10 +58,29 @@ body {
     width: 1600px;
     height: 800px;
     display: grid;
-    background-color: white;
+    background-color: rgb(133, 133, 133);
     /* grid-template-columns: repeat(64, 1fr);
     grid-template-rows: repeat(32, 1fr); */
+    /* gap: 1px; */
+
+
+    
 }
+
+.gridItem {
+    background-color: #ffffff;
+    display: grid;
+    /* grid-template-columns: auto 5%;
+    grid-template-rows: auto 5%; */
+}
+
+.box{
+    background-color: #ececec;
+}
+.box:hover{
+    background-color: #777777;
+}
+
 
 #leftTools, #rightTools {
     padding-top: 7px;
@@ -84,9 +103,6 @@ body {
     font-family: Montserrat, sans-serif;
     font-weight: 400;
     font-size: 12px;
-    
-    
-
 }
 
 .settingsHeader {
@@ -107,8 +123,6 @@ body {
     font-size: 13px;
     padding-left: 8px;
     font-weight: 400;
-    
-
 }
 
 .settingItem {
@@ -116,8 +130,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-
 }
 
 .colorInput {
@@ -189,33 +201,19 @@ input[type="checkbox"] {
   
 
 
-#canvas {
+/* #canvas {
     position: absolute;
     top: 56px;
     width: 1600px;
     height: 800px;
-}
-
-
-.gridItem {
-    background-color: #33b3ee;
-    display: grid;
-    grid-template-columns: auto 5%;
-    grid-template-rows: auto 5%;
-
-   }
-
-.box{
-    background-color: #ececec;
-}
+} */
 
 
 
-.point {
-    background-color: rgb(14, 2, 2);
-    grid-column-start: 2;
-    grid-row-start: 2;
-}
+
+
+
+
 
 
 

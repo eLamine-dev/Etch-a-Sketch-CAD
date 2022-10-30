@@ -5,19 +5,18 @@ let gridSizeInput = document.getElementById('gridSizeSlider') ;
 
 
 function updateGridSizes(){
-    
+
     if (gridSizeInput.value === "1") {
         gridColumns = 128;
         gridRows = 64;
-        // gridItemsCount = 8192;
+        
     } else if (gridSizeInput.value === "2") {
         gridColumns = 64;
         gridRows = 32;
-        // gridItemsCount = 2048;
+        
     } else if (gridSizeInput.value === "3") {
         gridColumns = 32;
         gridRows = 16;
-        // gridItemsCount = 1024;
     }
     gridItemsCount = gridColumns*gridRows;
 }
@@ -57,6 +56,7 @@ function setGrid() {
 let gridLineOption = document.getElementById('gridLines');
 
 gridLineOption.oninput = setupGridLines ;
+
 function setupGridLines() {
     if (gridLineOption.checked === false){
         container.style.gap = '0px';  
@@ -64,6 +64,11 @@ function setupGridLines() {
         container.style.gap = '1px';  
     }
 }
+
+let gridRefresh = document.getElementById('refreshGrid');
+gridRefresh.addEventListener('click', setGrid );
+
+
 
 
 
@@ -100,8 +105,6 @@ for (let i = 1; i <= 15; i++) {
         rightTools.appendChild(button); 
     }
 
-
-
 function changeBoxColor(e) {
     e.preventDefault();
     let pickedColor = document.getElementById("baseColor").value;
@@ -112,25 +115,33 @@ function changeBoxColor(e) {
     let randomG = Math.floor(Math.random() * 256);
     let randomB = Math.floor(Math.random() * 256);
     let randomOpacity = Math.round(Math.random() * 100) / 100;
-
-    if (randomColorOption.checked === true && randomShadesOption.checked === true ) {
-        this.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})` ;
-        this.style.opacity = `${randomOpacity}`
-        
-    } else if (randomColorOption.checked === true && randomShadesOption.checked === false ) { 
-        this.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB}`;
-
-    } else if (randomColorOption.checked === false && randomShadesOption.checked === true )  {
-        this.style.backgroundColor = pickedColor;
-        this.style.opacity = `${randomOpacity}` ;
-
-    } else {
-        this.style.backgroundColor = pickedColor;
-    }
-
-    console.log(randomOpacity);
     
+
+    if (currentTool === 'colorBrush') {
+        if (randomColorOption.checked === true && randomShadesOption.checked === true ) {
+            this.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})` ;
+            this.style.opacity = `${randomOpacity}`
+            
+        } else if (randomColorOption.checked === true && randomShadesOption.checked === false ) { 
+            this.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
+            this.style.opacity = `1` ;
+    
+        } else if (randomColorOption.checked === false && randomShadesOption.checked === true )  {
+            this.style.backgroundColor = pickedColor;
+            this.style.opacity = `${randomOpacity}` ;
+    
+        } else {
+            this.style.backgroundColor = pickedColor;
+        }
+    } else if (currentTool === 'colorEraser') {
+        this.style.backgroundColor = "#ffffff";
+    }
+    console.log(randomOpacity); 
 }
+
+
+let currentTool;
+
 
 function startPainting(e){
     e.preventDefault();
@@ -145,12 +156,23 @@ function stopPainting(e){
     boxes.forEach(box => box.removeEventListener('mouseenter', changeBoxColor));
 }
 
+function paint() {
+    container.addEventListener('mousedown', startPainting);
+    window.addEventListener('mouseup', stopPainting);
+}
 
 
 document.getElementById('leftBtn1').addEventListener('click', ()=> {
-    container.addEventListener('mousedown', startPainting);
-    container.addEventListener('mouseup', stopPainting);
+    currentTool = 'colorBrush';
+    paint();  
 })
+
+document.getElementById('rightBtn1').addEventListener('click', ()=> {
+    currentTool = 'colorEraser';
+    paint();   
+})
+
+
 
 
 document.querySelector('#leftBtn1 .buttonImg').src = "./images/brush.png";

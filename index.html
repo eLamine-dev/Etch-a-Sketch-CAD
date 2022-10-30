@@ -20,11 +20,34 @@
         <!-- <canvas id="canvas"></canvas> -->
         <div id="settings">
             <h3 class="settingsHeader">GLOBAL SETTINGS</h3>
+
+
+            <label class="sectionLabel" for="gridSettings">GRID SETTINGS</label>
+            <div id="gridSettings" class="settingsSection">
+                <div class="settingItem">
+                    <label for="gridColor">GRID SIZE</label>
+                    <div>
+                        <div id="gridSizeLetters"><span>S</span><span>M</span><span>L</span></div>
+                        <input type="range" min="1" max="3"  id="gridSizeSlider">
+                    </div>
+                </div>
+                <div class="settingItem">
+                    <label for="random">GRID LINES</label>
+                    <input type="checkbox" id="gridLines" checked>
+                </div>
+                <div class="settingItem">
+                    <label for="gridColor">CLEAR GRID</label>
+                    <button id="refreshGrid">
+                        <img src="./images/refresh.png" alt="" srcset="">
+                    </button>
+                </div> 
+            </div>
+
             <label class="sectionLabel" for="colorSettings">COLOR SETTINGS</label>
             <div id="colorSettings" class="settingsSection">
                 <div class="settingItem">
                     <label for="baseColor">BASE COLOR</label>
-                        <input  type="color" id="baseColor" class="colorInput" value="#333333"></input>
+                        <input  type="color" id="baseColor" class="colorInput" value="#000000"></input>
                 </div>
                 <div class="settingItem">
                     <label for="randomColor">RANDOM COLORS</label>
@@ -37,25 +60,8 @@
             
             </div>
                
-            <label class="sectionLabel" for="gridSettings">GRID SETTINGS</label>
-            <div id="gridSettings" class="settingsSection">
-                <div class="settingItem">
-                    <label for="gridColor">GRID SIZE</label>
-                    <div>
-                        <div id="gridSizeLetters"><span>S</span><span>M</span><span>L</span></div>
-                        <input type="range" min="1" max="3"  id="gridSizeSlider">
-                    </div>
-                </div>
-                <!-- <div class="settingItem">
-                    <label for="gridColor">GRID COLOR</label>
-                    <input  type="color" id="gridColor" class="colorInput" value="#333333" />
-                </div>  -->
-                  
-                <div class="settingItem">
-                    <label for="random">GRID LINES</label>
-                    <input type="checkbox" id="gridLines" checked>
-                </div>
-            </div>   
+            
+   
         </div>
 
         <div id="leftTools"></div>
@@ -67,7 +73,7 @@
     </div>
     
     <footer id="footer">
-        test
+        <p>Product by <a href="https://www.theodinproject.com/lessons/foundations-etch-a-sketch" style="color:inherit"> ODIN SYSTEMS</a> </p> 
     </footer>
     
 </body>

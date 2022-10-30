@@ -23,7 +23,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: #1297cc 2px solid;
 }
+
+
 
 #footer {
     background-color: #05004e;
@@ -31,14 +34,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    color: #f8fdff;
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    border-top: #1297cc 2px solid;
 }
 
 #logo {
     display: flex;
     align-items: center;
     margin: 0;
-    
+
 }
 
 #logo h1{
@@ -52,19 +59,17 @@ body {
     color: #c24d2c;
 }
 
-
-
 #container{
     width: 1600px;
     height: 800px;
     display: grid;
-    background-color: rgb(133, 133, 133);
+    background-color: #8d8d9a;
     /* grid-template-columns: repeat(64, 1fr);
     grid-template-rows: repeat(32, 1fr); */
     /* gap: 1px; */
-
-
-    
+}
+#container:hover {
+    cursor: crosshair;
 }
 
 .gridItem {
@@ -75,7 +80,7 @@ body {
 }
 
 .box{
-    background-color: #ececec;
+    background-color: #ffffff;
 }
 .box:hover{
     background-color: #777777;
@@ -103,6 +108,7 @@ body {
     font-family: Montserrat, sans-serif;
     font-weight: 400;
     font-size: 12px;
+
 }
 
 .settingsHeader {
@@ -155,6 +161,10 @@ input[type="checkbox"] {
     width: 16px;
 }
 
+input:hover {
+    cursor: pointer;
+}
+
 
 #gridSizeSlider {
      
@@ -198,7 +208,13 @@ input[type="checkbox"] {
     justify-content: space-between;
   }
 
-  
+  #refreshGrid {
+    padding: 5px;
+  }
+ 
+  #refreshGrid img {
+    height: 20px;
+  }
 
 
 /* #canvas {
@@ -207,17 +223,6 @@ input[type="checkbox"] {
     width: 1600px;
     height: 800px;
 } */
-
-
-
-
-
-
-
-
-
-
-
 
 button {
     display: flex;
@@ -233,6 +238,7 @@ button {
    
    button:hover {
     background-color: rgba(26, 22, 53, 0.46);
+    cursor: pointer;
     
    }
    
@@ -266,18 +272,6 @@ button {
    }
 
    
-   
-   /* .tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 100%;
-    margin-top: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent rgba(0, 0, 0, 0.253) transparent transparent;
-   } */
-   
    .leftTooltip:hover .tooltiptext,
    .rightTooltip:hover .tooltiptext {
     visibility: visible;
@@ -286,3 +280,6 @@ button {
    .buttonImg {
     height: 28px;
    }
+
+
+ 

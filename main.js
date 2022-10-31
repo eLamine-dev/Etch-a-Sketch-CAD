@@ -1,8 +1,37 @@
-
+// setting-up the grid
 let container = document.getElementById('container');
+window.onload = function() {
+    updateGridSizes();
+    setGrid();
+    setupGridLines();  
+}
+
+function setGrid() {
+
+    container.textContent = '';  
+    container.style.gridTemplateColumns = `repeat(${gridColumns}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${gridRows}, 1fr)` ;
+    
+    for (let i = 0; i < gridItemsCount; i++) {
+
+        let gridItem = document.createElement('div');
+        gridItem.classList.add('gridItem');
+    
+        let box = document.createElement('div');
+        box.classList.add('box');
+        gridItem.appendChild(box);
+    
+        container.appendChild(gridItem);   
+    }
+}
+
+// Grid size slider 
 let gridSizeInput = document.getElementById('gridSizeSlider') ;
-
-
+gridSizeInput.oninput = function() {  
+    updateGridSizes();
+    setGrid();
+    setupGridLines()
+}
 
 function updateGridSizes(){
 
@@ -21,40 +50,8 @@ function updateGridSizes(){
     gridItemsCount = gridColumns*gridRows;
 }
 
-window.onload = function() {
-    updateGridSizes();
-    setGrid();
-    setupGridLines();  
-}
-
-gridSizeInput.oninput = function() {  
-    updateGridSizes();
-    setGrid();
-    setupGridLines()
-}
-
-function setGrid() {
-
-    container.textContent = '';  
-    container.style.gridTemplateColumns = `repeat(${gridColumns}, 1fr)`;
-    container.style.gridTemplateRows = `repeat(${gridRows}, 1fr)` ;
-    
-
-    for (let i = 0; i < gridItemsCount; i++) {
-
-        let gridItem = document.createElement('div');
-        gridItem.classList.add('gridItem');
-    
-        let box = document.createElement('div');
-        box.classList.add('box');
-        gridItem.appendChild(box);
-    
-        container.appendChild(gridItem);   
-    }
-}
-
+// Grid lines switch
 let gridLineOption = document.getElementById('gridLines');
-
 gridLineOption.oninput = setupGridLines ;
 
 function setupGridLines() {
@@ -64,46 +61,45 @@ function setupGridLines() {
         container.style.gap = '1px';  
     }
 }
-
+// Clear Grid
 let gridRefresh = document.getElementById('refreshGrid');
 gridRefresh.addEventListener('click', setGrid );
 
-
-
-
-
-
+// Left and right tools buttons
 let leftTools = document.getElementById('leftTools');
 let rightTools = document.getElementById('rightTools');
 
 for (let i = 1; i <= 15; i++) {
  
-        let button = document.createElement('button');
-        button.id = `leftBtn${i}` ;
-        button.classList.add('leftTooltip');
-        let buttonImg = document.createElement('img')
-        buttonImg.classList.add('buttonImg');
-        button.appendChild(buttonImg);
-        let buttonTip = document.createElement('span');
-        buttonTip.classList.add('tooltiptext');
-        button.appendChild(buttonTip);
+    let button = document.createElement('button');
+    button.id = `leftBtn${i}` ;
+    button.classList.add('leftTooltip');
+    let buttonImg = document.createElement('img')
+    buttonImg.classList.add('buttonImg');
+    button.appendChild(buttonImg);
+    let buttonTip = document.createElement('span');
+    buttonTip.classList.add('tooltiptext');
+    button.appendChild(buttonTip);
 
-        leftTools.appendChild(button);   
-    }
+    leftTools.appendChild(button);   
+}
 
 for (let i = 1; i <= 15; i++) {   
-        let button = document.createElement('button');
-        button.id = `rightBtn${i}` ;
-        button.classList.add('rightTooltip');
-        let buttonImg = document.createElement('img')
-        buttonImg.classList.add('buttonImg');
-        button.appendChild(buttonImg);
-        let buttonTip = document.createElement('span');
-        buttonTip.classList.add('tooltiptext');
-        button.appendChild(buttonTip);
+    let button = document.createElement('button');
+    button.id = `rightBtn${i}` ;
+    button.classList.add('rightTooltip');
+    let buttonImg = document.createElement('img')
+    buttonImg.classList.add('buttonImg');
+    button.appendChild(buttonImg);
+    let buttonTip = document.createElement('span');
+    buttonTip.classList.add('tooltiptext');
+    button.appendChild(buttonTip);
 
-        rightTools.appendChild(button); 
-    }
+    rightTools.appendChild(button); 
+}
+
+// Grid items coloring functions
+let currentTool;
 
 function changeBoxColor(e) {
     e.preventDefault();
@@ -139,10 +135,6 @@ function changeBoxColor(e) {
     console.log(randomOpacity); 
 }
 
-
-let currentTool;
-
-
 function startPainting(e){
     e.preventDefault();
     const boxes = document.querySelectorAll('.box');
@@ -161,12 +153,13 @@ function paint() {
     window.addEventListener('mouseup', stopPainting);
 }
 
-
+// coloring brush tool
 document.getElementById('leftBtn1').addEventListener('click', ()=> {
     currentTool = 'colorBrush';
     paint();  
 })
 
+// Eraser tool
 document.getElementById('rightBtn1').addEventListener('click', ()=> {
     currentTool = 'colorEraser';
     paint();   
@@ -174,7 +167,7 @@ document.getElementById('rightBtn1').addEventListener('click', ()=> {
 
 
 
-
+// tools images
 document.querySelector('#leftBtn1 .buttonImg').src = "./images/brush.png";
 document.querySelector('#leftBtn1 .tooltiptext').textContent = "Brush";
 document.querySelector('#leftBtn2 .buttonImg').src = "./images/line.png";
@@ -187,8 +180,6 @@ document.querySelector('#leftBtn5 .buttonImg').src = "./images/ngon.png";
 document.querySelector('#leftBtn5 .tooltiptext').textContent = "Ngon";
 document.querySelector('#leftBtn6 .buttonImg').src = "./images/arc.png";
 document.querySelector('#leftBtn6 .tooltiptext').textContent = "Arc";
-
-
 
 document.querySelector('#rightBtn1 .buttonImg').src = "./images/erase.png";
 document.querySelector('#rightBtn1 .tooltiptext').textContent = "Erase";

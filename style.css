@@ -159,10 +159,6 @@ input:hover {
     -webkit-transition: .2s;
 }
 
-#gridSizeSlider:hover {
-    cursor: pointer; 
-}
-
 #gridSizeSlider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;

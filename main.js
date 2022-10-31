@@ -1,10 +1,10 @@
 // setting-up the grid
 let container = document.getElementById('container');
-window.onload = function() {
+window.addEventListener('load', ()=> {
     updateGridSizes();
     setGrid();
-    setupGridLines();  
-}
+    setupGridLines()
+})
 
 function setGrid() {
 
@@ -27,11 +27,12 @@ function setGrid() {
 
 // Grid size slider 
 let gridSizeInput = document.getElementById('gridSizeSlider') ;
-gridSizeInput.oninput = function() {  
+
+gridSizeInput.addEventListener('input', ()=> {
     updateGridSizes();
     setGrid();
     setupGridLines()
-}
+})
 
 function updateGridSizes(){
 
@@ -99,7 +100,7 @@ for (let i = 1; i <= 15; i++) {
 }
 
 // Grid items coloring functions
-let currentTool;
+let currentTool = '';
 
 function changeBoxColor(e) {
     e.preventDefault();
@@ -112,7 +113,6 @@ function changeBoxColor(e) {
     let randomB = Math.floor(Math.random() * 256);
     let randomOpacity = Math.round(Math.random() * 100) / 100;
     
-
     if (currentTool === 'colorBrush') {
         if (randomColorOption.checked === true && randomShadesOption.checked === true ) {
             this.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})` ;
@@ -132,7 +132,6 @@ function changeBoxColor(e) {
     } else if (currentTool === 'colorEraser') {
         this.style.backgroundColor = "#ffffff";
     }
-    console.log(randomOpacity); 
 }
 
 function startPainting(e){
@@ -142,8 +141,7 @@ function startPainting(e){
     boxes.forEach(box => box.addEventListener('mouseenter', changeBoxColor));
 }
 
-function stopPainting(e){
-    e.preventDefault();
+function stopPainting(){
     const boxes = document.querySelectorAll('.box');
     boxes.forEach(box => box.removeEventListener('mouseenter', changeBoxColor));
 }

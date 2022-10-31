@@ -175,7 +175,7 @@ input:hover {
   
 #gridSizeSlider::-moz-range-thumb {
     width: 15px;
-    height: 15px;s
+    height: 15px;
     border-radius: 50%;
     background: #ffffff;
     cursor: pointer;

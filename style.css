@@ -197,6 +197,7 @@ input:hover {
 }
 
 button {
+    outline: none;
     display: flex;
     justify-content: center;
     align-items: center;

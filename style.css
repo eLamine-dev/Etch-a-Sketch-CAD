@@ -1,21 +1,25 @@
-html {
+ {
     box-sizing: border-box;
 }
 
-body {
+html, body {
     margin: 0;
     height: 100vh;
+    width: 100vw;
     display: flex;
-    flex-direction: column;  
+    flex-direction: column;
+    justify-content: center;  
 }
 
 #drawingArea {
-    height: 800px;
+    height: 82%;
+
     display: flex;
-    justify-content: center;
+   
 }
 
 #header {
+    
     flex-grow: 1;
     background-color: #05004e;
     display: flex;
@@ -25,6 +29,7 @@ body {
 }
 
 #footer {
+    /* height: 7%; */
     background-color: #05004e;
     flex-grow: 1  ;
     display: flex;
@@ -55,15 +60,14 @@ body {
 }
 
 #container{
-    width: 1600px;
-    height: 800px;
+    /* flex-grow: 1  ; */
+    /* height: 60%; */
+    aspect-ratio: 2 / 1;
     display: grid;
     background-color: #95959a;
-}
-
-#container:hover {
     cursor: crosshair;
 }
+
 
 .gridItem {
     background-color: #ffffff;
@@ -78,20 +82,22 @@ body {
 }
 
 #leftTools, #rightTools {
-    padding-top: 7px;
-    background-color: #38598b;
     width: 60px;
+    /* padding: 7px 4px 0px 4px; */
+    background-color: #38598b;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 7px;
+    /* gap: 7px; */
+    justify-content: space-around;
 }
 
 #settings {
     padding: 0px 6px ;
     color: white;
     background-color:#0c005a;
-    width: 100px;
+    /* width:200px; */
     flex-grow: 1;
     font-family: Montserrat, sans-serif;
     font-weight: 400;
@@ -193,6 +199,8 @@ input:hover {
 }
 
 button {
+    width: 80%;
+    aspect-ratio: 1/1;
     outline: none;
     display: flex;
     justify-content: center;
@@ -208,8 +216,8 @@ button:hover {
 }  
 .rightTooltip , .leftTooltip {
     position: relative;
-    height: 46px;
-    width: 46px;
+    
+    
 }
    
 .leftTooltip .tooltiptext,
@@ -240,7 +248,8 @@ button:hover {
 }
 
 .buttonImg {
-    height: 28px;
+    height: 32px;
+   
 }
 
 

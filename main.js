@@ -165,22 +165,26 @@ document.getElementById('rightBtn1').addEventListener('click', ()=> {
 
 
 
-// tools images
-document.querySelector('#leftBtn1 .buttonImg').src = "./images/brush.png";
+//tools images
+document.querySelector('#leftBtn1').style.backgroundImage = "url(./images/brush.png)";
 document.querySelector('#leftBtn1 .tooltiptext').textContent = "Brush";
-document.querySelector('#leftBtn2 .buttonImg').src = "./images/line.png";
+document.querySelector('#leftBtn2').style.backgroundImage = "url(./images/line.png)";
 document.querySelector('#leftBtn2 .tooltiptext').textContent = "Line";
-document.querySelector('#leftBtn3 .buttonImg').src = "./images/rectangle.png";
+document.querySelector('#leftBtn3').style.backgroundImage = "url(./images/rectangle.png)";
 document.querySelector('#leftBtn3 .tooltiptext').textContent = "Rectangle";
-document.querySelector('#leftBtn4 .buttonImg').src = "./images/circle.png";
+document.querySelector('#leftBtn4').style.backgroundImage = "url(./images/circle.png)";
 document.querySelector('#leftBtn4 .tooltiptext').textContent = "Circle";
-document.querySelector('#leftBtn5 .buttonImg').src = "./images/ngon.png";
+document.querySelector('#leftBtn5').style.backgroundImage = "url(./images/ngon.png)";
 document.querySelector('#leftBtn5 .tooltiptext').textContent = "Ngon";
-document.querySelector('#leftBtn6 .buttonImg').src = "./images/arc.png";
+document.querySelector('#leftBtn6').style.backgroundImage = "url(./images/arc.png)";
 document.querySelector('#leftBtn6 .tooltiptext').textContent = "Arc";
 
-document.querySelector('#rightBtn1 .buttonImg').src = "./images/erase.png";
+document.querySelector('#rightBtn1').style.backgroundImage = "url(./images/erase.png)";
 document.querySelector('#rightBtn1 .tooltiptext').textContent = "Erase";
+
+
+document.querySelector('#leftBtn1').style.backgroundImage = "url(./images/brush.png)";
+document.querySelector('#leftBtn1 .tooltiptext').textContent = "Brush";
 
 
 

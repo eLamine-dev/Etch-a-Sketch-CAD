@@ -5,7 +5,7 @@ html {
 html, body {
     margin: 0;
     height: 100vh;
-    width: 100vw;
+    /* width: 100vw; */
     /* display: flex;
     flex-direction: column;
     justify-content: center;   */
@@ -17,7 +17,7 @@ html, body {
 
 #drawingArea {
     display: grid;
-    grid-template-columns: 12% auto 82% auto;
+    grid-template-columns: 14% auto 80% auto;
    
 }
 

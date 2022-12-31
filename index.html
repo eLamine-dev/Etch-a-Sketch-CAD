@@ -1,66 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
-    <title>OdinCAD</title>
-</head>
-<body>
-    <header id="header">
-        <div id="logo">
-            <h1>Odin<span>CAD</span></h1><img src="./images/icon.png" height="42px"  alt="">
-        </div>
-    </header>
-    <div id="drawingArea">
-        <!-- <canvas id="canvas"></canvas> -->
-        <div id="settings">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="style.css" />
+      <script src="main.js" defer></script>
+      <title>OdinCAD</title>
+   </head>
+   <body>
+      <header id="header">
+         <div id="logo">
+            <h1>Odin<span>CAD</span></h1>
+            <img src="./images/icon.png" height="42px" alt="" />
+         </div>
+      </header>
+      <div id="drawingArea">
+         <div id="settings">
             <h3 class="settingsHeader">GLOBAL SETTINGS</h3>
             <label class="sectionLabel" for="gridSettings">GRID SETTINGS</label>
             <div id="gridSettings" class="settingsSection">
-                <div class="settingItem">
-                    <label for="gridSize">GRID SIZE</label>
-                    <div id="gridSize">
-                        <div id="gridSizeLetters"><span>S</span><span>M</span><span>L</span></div>
-                        <input type="range" min="1" max="3" id="gridSizeSlider" value="2">
-                    </div>
-                </div>
-                <div class="settingItem">
-                    <label for="random">GRID LINES</label>
-                    <input type="checkbox" id="gridLines" checked>
-                </div>
-                <div class="settingItem">
-                    <label for="gridColor">CLEAR GRID</label>
-                    <button id="refreshGrid">
-                        <img src="./images/refresh.png" alt="" srcset="">
-                    </button>
-                </div> 
+               <div class="settingItem">
+                  <label for="gridSize">GRID SIZE</label>
+                  <div id="gridSize">
+                     <div id="gridSizeLetters">
+                        <span>S</span><span>M</span><span>L</span>
+                     </div>
+                     <input
+                        type="range"
+                        min="1"
+                        max="3"
+                        id="gridSizeSlider"
+                        value="2"
+                     />
+                  </div>
+               </div>
+               <div class="settingItem">
+                  <label for="random">GRID LINES</label>
+                  <input type="checkbox" id="gridLines" checked />
+               </div>
+               <div class="settingItem">
+                  <label for="gridColor">CLEAR GRID</label>
+                  <button id="refreshGrid">
+                     <img src="./images/refresh.png" alt="" srcset="" />
+                  </button>
+               </div>
             </div>
-            <label class="sectionLabel" for="colorSettings">COLOR SETTINGS</label>
+            <label class="sectionLabel" for="colorSettings"
+               >COLOR SETTINGS</label
+            >
             <div id="colorSettings" class="settingsSection">
-                <div class="settingItem">
-                    <label for="baseColor">BASE COLOR</label>
-                        <input  type="color" id="baseColor" class="colorInput" value="#000000"></input>
-                </div>
-                <div class="settingItem">
-                    <label for="randomColor">RANDOM COLORS</label>
-                    <input type="checkbox" name="randomColor" id="randomColor">
-                </div>
-                <div class="settingItem">
-                    <label for="random">RANDOM SHADES</label>
-                    <input type="checkbox" id="randomShades">
-                </div>
+               <div class="settingItem">
+                  <label for="baseColor">BASE COLOR</label>
+                  <input
+                     type="color"
+                     id="baseColor"
+                     class="colorInput"
+                     value="#000000"
+                  />
+               </div>
+               <div class="settingItem">
+                  <label for="randomColor">RANDOM COLORS</label>
+                  <input type="checkbox" name="randomColor" id="randomColor" />
+               </div>
+               <div class="settingItem">
+                  <label for="random">RANDOM SHADES</label>
+                  <input type="checkbox" id="randomShades" />
+               </div>
             </div>
-        </div>
-        <div id="leftTools"></div>
-        <div id="container"></div>
-        <div id="rightTools"></div>  
-    </div>
-    <footer id="footer">
-        <p>Product by <a href="https://www.theodinproject.com/lessons/foundations-etch-a-sketch" style="color:inherit"> ODIN SYSTEMS</a></p> 
-    </footer>
-</body>
+         </div>
+         <div id="leftTools"></div>
+         <div id="container"></div>
+         <div id="rightTools"></div>
+      </div>
+      <footer id="footer">
+         <p>
+            Product by
+            <a
+               href="https://www.theodinproject.com/lessons/foundations-etch-a-sketch"
+               style="color: inherit"
+            >
+               ODIN SYSTEMS</a
+            >
+         </p>
+      </footer>
+   </body>
 </html>

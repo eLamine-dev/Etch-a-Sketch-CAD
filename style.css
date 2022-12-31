@@ -1,95 +1,87 @@
 html {
-    box-sizing: border-box;
+   box-sizing: border-box;
 }
 
-html, body {
-    margin: 0;
-    height: 100vh;
-    /* width: 100vw; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;   */
-    display: grid;
-    grid-auto-flow: row;
-    grid-template-rows: 1fr auto 1fr;
-
+html,
+body {
+   margin: 0;
+   height: 100vh;
+   display: grid;
+   grid-auto-flow: row;
+   grid-template-rows: 1fr auto 1fr;
 }
 
 #drawingArea {
-    display: grid;
-    grid-template-columns: 14% auto 80% auto;
-   
+   display: grid;
+   grid-template-columns: 14% auto 80% auto;
 }
 
 #header {
-    
-    flex-grow: 1;
-    background-color: #05004e;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: #1297cc 2px solid;
+   flex-grow: 1;
+   background-color: #05004e;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-bottom: #1297cc 2px solid;
 }
 
 #footer {
-    background-color: #05004e;
-    flex-grow: 1  ;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #f8fdff;
-    font-family: Montserrat, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    border-top: #1297cc 2px solid;
+   background-color: #05004e;
+   flex-grow: 1;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: #f8fdff;
+   font-family: Montserrat, sans-serif;
+   font-weight: 400;
+   font-size: 16px;
+   border-top: #1297cc 2px solid;
 }
 
 #logo {
-    display: flex;
-    align-items: center;
-    margin: 0;
+   display: flex;
+   align-items: center;
+   margin: 0;
 }
 
-#logo h1{
-    font-size: 40px ;
-    color: #f8fdff;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin: 0;
+#logo h1 {
+   font-size: 40px;
+   color: #f8fdff;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+   margin: 0;
 }
 
 #logo span {
-    color: #c24d2c;
+   color: #c24d2c;
 }
 
-#container{
-    aspect-ratio: 2 / 1;
-    display: grid;
-    background-color: #95959a;
-    cursor: crosshair;
+#container {
+   aspect-ratio: 2 / 1;
+   display: grid;
+   background-color: #95959a;
+   cursor: crosshair;
 }
-
 
 .gridItem {
-    background-color: #ffffff;
-    display: grid;
+   background-color: #ffffff;
+   display: grid;
 }
 
-.box{
-    background-color: #ffffff;
+.box {
+   background-color: #ffffff;
 }
-.box:hover{
-    background-color: #777777;
+.box:hover {
+   background-color: #777777;
 }
-
-
 
 #settings {
-    padding: 0px 6px ;
-    color: white;
-    background-color:#0c005a;
-    font-family: Montserrat, sans-serif;
-    font-weight: 400;
-    font-size: 12px;
+   padding: 0px 6px;
+   color: white;
+   background-color: #0c005a;
+   font-family: Montserrat, sans-serif;
+   font-weight: 400;
+   font-size: 12px;
 }
 
 .settingsHeader {
@@ -98,168 +90,154 @@ html, body {
 }
 
 .settingsSection {
-    padding: 8px;
-    background-color: #38598b;
-    border-radius: 5px;
-    margin-bottom: 14px;
+   padding: 8px;
+   background-color: #38598b;
+   border-radius: 5px;
+   margin-bottom: 14px;
 }
 
 .sectionLabel {
-    color: #ffffff;
-    font-size: 13px;
-    padding-left: 8px;
-    font-weight: 400;
+   color: #ffffff;
+   font-size: 13px;
+   padding-left: 8px;
+   font-weight: 400;
 }
 
 .settingItem {
-    margin-bottom: 6px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-shrink: 1;
+   margin-bottom: 6px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-shrink: 1;
 }
 
-
 .colorInput {
-    padding: 0;
-    margin: 0px;
-    width: 32px;
-    height: 16px;
+   padding: 0;
+   margin: 0px;
+   width: 32px;
+   height: 16px;
 }
 
 input[type="color"] {
-    -webkit-appearance: none;
-    border: none;
+   -webkit-appearance: none;
+   border: none;
 }
 input[type="color"]::-webkit-color-swatch-wrapper {
-    padding: 0;
+   padding: 0;
 }
 input[type="color"]::-webkit-color-swatch {
-    border: none;
+   border: none;
 }
 input[type="checkbox"] {
-    height: 16px;
-    width: 16px;
+   height: 16px;
+   width: 16px;
 }
 input:hover {
-    cursor: pointer;
+   cursor: pointer;
 }
 
 #gridSizeSlider {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 5px;
-    border-radius: 5px;  
-    background: #ffffff;
-    outline: none;
-    -webkit-transition: .2s;
+   -webkit-appearance: none;
+   width: 100%;
+   height: 5px;
+   border-radius: 5px;
+   background: #ffffff;
+   outline: none;
+   -webkit-transition: 0.2s;
 }
 #gridSize {
    width: 50%;
 }
 #gridSizeSlider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%; 
-    background: rgb(207, 185, 185);
-    cursor: pointer;
-}
-  
-#gridSizeSlider::-moz-range-thumb {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: #ffffff;
-    cursor: pointer;
+   -webkit-appearance: none;
+   appearance: none;
+   width: 15px;
+   height: 15px;
+   border-radius: 50%;
+   background: rgb(207, 185, 185);
+   cursor: pointer;
 }
 
-#gridSizeLetters{
-    display: flex;
-    justify-content: space-between;
+#gridSizeSlider::-moz-range-thumb {
+   width: 15px;
+   height: 15px;
+   border-radius: 50%;
+   background: #ffffff;
+   cursor: pointer;
+}
+
+#gridSizeLetters {
+   display: flex;
+   justify-content: space-between;
 }
 
 #refreshGrid {
-    height: 32px;
-    width: 32px;
-}
- 
-#refreshGrid img {
-    height: 20px;
-    margin: auto;
+   height: 32px;
+   width: 32px;
 }
 
-#leftTools, #rightTools { 
-    padding: 5px;
-    background-color: #38598b;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
-    justify-content: space-around;
-    /* display: grid;
-    grid-auto-flow: row; */
+#refreshGrid img {
+   height: 20px;
+   margin: auto;
 }
-button { 
-    outline: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 0px solid transparent;
-    background-color: rgba(216, 214, 229, 0.1);
-    border-radius: 0.5em;
-    
+
+#leftTools,
+#rightTools {
+   padding: 5px;
+   background-color: #38598b;
+   display: inline-flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 3px;
+   justify-content: space-around;
 }
-   
+button {
+   outline: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 0px solid transparent;
+   background-color: rgba(216, 214, 229, 0.1);
+   border-radius: 0.5em;
+}
+
 button:hover {
-    background-color: rgba(26, 22, 53, 0.46);
-    cursor: pointer;    
-    
-}  
-.rightTooltip , .leftTooltip {
-    background-size: 60%;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-    flex-grow: 1;
-    aspect-ratio: 1/1;
-    
-    
+   background-color: rgba(26, 22, 53, 0.46);
+   cursor: pointer;
 }
-   
+.rightTooltip,
+.leftTooltip {
+   background-size: 60%;
+   background-repeat: no-repeat;
+   background-position: center;
+   position: relative;
+   flex-grow: 1;
+   aspect-ratio: 1/1;
+}
+
 .leftTooltip .tooltiptext,
-.rightTooltip .tooltiptext  {
-    visibility: hidden;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 4px;
-    position: absolute; 
-    z-index: 0;
+.rightTooltip .tooltiptext {
+   visibility: hidden;
+   background-color: rgba(0, 0, 0, 0.7);
+   color: #fff;
+   text-align: center;
+   border-radius: 6px;
+   padding: 4px;
+   position: absolute;
+   z-index: 0;
 }
 
 .leftTooltip .tooltiptext {
-    top: 30%;
-    left: 120%; 
+   top: 30%;
+   left: 120%;
 }
 
 .rightTooltip .tooltiptext {
-    top: 30%;
-    right: 120%; 
+   top: 30%;
+   right: 120%;
 }
-  
+
 .leftTooltip:hover .tooltiptext,
 .rightTooltip:hover .tooltiptext {
-    visibility: visible;
+   visibility: visible;
 }
-
-/* .buttonImg {
-    width: 5%;
-    
-   
-} */
-
-
- 
